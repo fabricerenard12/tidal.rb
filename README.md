@@ -3,6 +3,9 @@
 
 A Ruby wrapper to interact with the Tidal API. This gem provides a Ruby wrapper around the Tidal API, allowing developers to easily interact with Tidal's services, including retrieving album and artist information, searching for tracks, and more.
 
+![Gem Version](https://badge.fury.io/rb/tidal.svg)
+![Build Status](https://github.com/yourusername/tidal/workflows/CI/badge.svg)
+
 ## Installation
 
 Add this line to your application's Gemfile:

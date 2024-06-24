@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - Tidal API Client Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search (/) for a class, method, ..." spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+
+
+  <ul class="link-list" role="directory">
+              <li>
+            <details open>
+              <summary>      <a href="#label-Tidal">Tidal</a>
+</summary>
+              <ul class="link-list" role="directory">
+                          <li>      <a href="#label-Installation">Installation</a>
+          <li>
+            <details open>
+              <summary>      <a href="#label-Usage">Usage</a>
+</summary>
+              <ul class="link-list" role="directory">
+                          <li>      <a href="#label-Configuration">Configuration</a>
+          <li>      <a href="#label-Fetch+Albums+by+Barcode+ID">Fetch Albums by Barcode ID</a>
+          <li>      <a href="#label-Fetch+Multiple+Albums+by+IDs">Fetch Multiple Albums by IDs</a>
+          <li>      <a href="#label-Fetch+Album+Items">Fetch Album Items</a>
+          <li>      <a href="#label-Fetch+Similar+Albums">Fetch Similar Albums</a>
+          <li>      <a href="#label-Fetch+Single+Album">Fetch Single Album</a>
+          <li>      <a href="#label-Fetch+Albums+by+Artist">Fetch Albums by Artist</a>
+          <li>      <a href="#label-Fetch+Multiple+Artists+by+IDs">Fetch Multiple Artists by IDs</a>
+          <li>      <a href="#label-Fetch+Similar+Artists">Fetch Similar Artists</a>
+          <li>      <a href="#label-Fetch+Single+Artist">Fetch Single Artist</a>
+          <li>      <a href="#label-Fetch+Tracks+by+Artist">Fetch Tracks by Artist</a>
+          <li>      <a href="#label-Fetch+Multiple+Tracks+by+IDs">Fetch Multiple Tracks by IDs</a>
+          <li>      <a href="#label-Fetch+Tracks+by+ISRC">Fetch Tracks by ISRC</a>
+          <li>      <a href="#label-Fetch+Single+Track">Fetch Single Track</a>
+          <li>      <a href="#label-Fetch+Similar+Tracks">Fetch Similar Tracks</a>
+          <li>      <a href="#label-Fetch+Multiple+Videos+by+IDs">Fetch Multiple Videos by IDs</a>
+          <li>      <a href="#label-Fetch+Single+Video">Fetch Single Video</a>
+          <li>      <a href="#label-Search">Search</a>
+
+              </ul>
+            </details>
+          </li>
+          <li>      <a href="#label-Development">Development</a>
+          <li>      <a href="#label-Contributing">Contributing</a>
+          <li>      <a href="#label-License">License</a>
+
+              </ul>
+            </details>
+          </li>
+
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    
+<div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+    <li><a href="./README_md.html">README</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.md">
+
+<h1 id="label-Tidal"><a href="Tidal.html"><code>Tidal</code></a><span><a href="#label-Tidal">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>A Ruby wrapper to interact with the <a href="Tidal.html"><code>Tidal</code></a> API. This gem provides a Ruby wrapper around the <a href="Tidal.html"><code>Tidal</code></a> API, allowing developers to easily interact with Tidal’s services, including retrieving album and artist information, searching for tracks, and more.</p>
+
+<p><img src="https://badge.fury.io/rb/tidal.svg"></p>
+
+<h2 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Add this line to your application’s Gemfile:</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&#39;tidal&#39;</span>
+</pre>
+
+<p>And then execute:</p>
+
+<pre>$ bundle install</pre>
+
+<p>Or install it yourself as:</p>
+
+<pre>$ gem install tidal</pre>
+
+<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Configuration">Configuration<span><a href="#label-Configuration">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>First, you need to initialize the client with your <a href="Tidal.html"><code>Tidal</code></a> API credentials.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;tidal&#39;</span>
+
+<span class="ruby-identifier">client_id</span> = <span class="ruby-string">&#39;your_client_id&#39;</span>
+<span class="ruby-identifier">client_secret</span> = <span class="ruby-string">&#39;your_client_secret&#39;</span>
+<span class="ruby-identifier">client</span> = <span class="ruby-constant">Tidal</span><span class="ruby-operator">::</span><span class="ruby-constant">ClientV1</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">client_id</span>, <span class="ruby-identifier">client_secret</span>)
+</pre>
+
+<h3 id="label-Fetch+Albums+by+Barcode+ID">Fetch Albums by Barcode ID<span><a href="#label-Fetch+Albums+by+Barcode+ID">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">barcode_id</span> = <span class="ruby-string">&#39;123456789&#39;</span>
+<span class="ruby-identifier">country_code</span> = <span class="ruby-string">&#39;US&#39;</span>
+<span class="ruby-identifier">albums</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_albums_by_barcode_id</span>(<span class="ruby-identifier">barcode_id</span>, <span class="ruby-identifier">country_code</span>)
+</pre>
+
+<h3 id="label-Fetch+Multiple+Albums+by+IDs">Fetch Multiple Albums by IDs<span><a href="#label-Fetch+Multiple+Albums+by+IDs">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">album_ids</span> = [<span class="ruby-string">&#39;123&#39;</span>, <span class="ruby-string">&#39;456&#39;</span>, <span class="ruby-string">&#39;789&#39;</span>]
+<span class="ruby-identifier">country_code</span> = <span class="ruby-string">&#39;US&#39;</span>
+<span class="ruby-identifier">albums</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_multiple_albums</span>(<span class="ruby-identifier">album_ids</span>, <span class="ruby-identifier">country_code</span>)
+</pre>
+
+<h3 id="label-Fetch+Album+Items">Fetch Album Items<span><a href="#label-Fetch+Album+Items">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">album_id</span> = <span class="ruby-string">&#39;123&#39;</span>
+<span class="ruby-identifier">country_code</span> = <span class="ruby-string">&#39;US&#39;</span>
+<span class="ruby-identifier">items</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_album_items</span>(<span class="ruby-identifier">album_id</span>, <span class="ruby-identifier">country_code</span>)
+</pre>
+
+<h3 id="label-Fetch+Similar+Albums">Fetch Similar Albums<span><a href="#label-Fetch+Similar+Albums">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">album_id</span> = <span class="ruby-string">&#39;123&#39;</span>
+<span class="ruby-identifier">country_code</span> = <span class="ruby-string">&#39;US&#39;</span>
+<span class="ruby-identifier">similar_albums</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_similar_albums</span>(<span class="ruby-identifier">album_id</span>, <span class="ruby-identifier">country_code</span>)
+</pre>
+
+<h3 id="label-Fetch+Single+Album">Fetch Single Album<span><a href="#label-Fetch+Single+Album">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">album_id</span> = <span class="ruby-string">&#39;123&#39;</span>
+<span class="ruby-identifier">country_code</span> = <span class="ruby-string">&#39;US&#39;</span>
+<span class="ruby-identifier">album</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_single_album</span>(<span class="ruby-identifier">album_id</span>, <span class="ruby-identifier">country_code</span>)
+</pre>
+
+<h3 id="label-Fetch+Albums+by+Artist">Fetch Albums by Artist<span><a href="#label-Fetch+Albums+by+Artist">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">artist_id</span> = <span class="ruby-string">&#39;1234&#39;</span>
+<span class="ruby-identifier">country_code</span> = <span class="ruby-string">&#39;US&#39;</span>
+<span class="ruby-identifier">albums</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_albums_by_artist</span>(<span class="ruby-identifier">artist_id</span>, <span class="ruby-identifier">country_code</span>)
+</pre>
+
+<h3 id="label-Fetch+Multiple+Artists+by+IDs">Fetch Multiple Artists by IDs<span><a href="#label-Fetch+Multiple+Artists+by+IDs">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">artist_ids</span> = [<span class="ruby-string">&#39;123&#39;</span>, <span class="ruby-string">&#39;456&#39;</span>, <span class="ruby-string">&#39;789&#39;</span>]
+<span class="ruby-identifier">country_code</span> = <span class="ruby-string">&#39;US&#39;</span>
+<span class="ruby-identifier">artists</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_multiple_artists</span>(<span class="ruby-identifier">artist_ids</span>, <span class="ruby-identifier">country_code</span>)
+</pre>
+
+<h3 id="label-Fetch+Similar+Artists">Fetch Similar Artists<span><a href="#label-Fetch+Similar+Artists">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">artist_id</span> = <span class="ruby-string">&#39;1234&#39;</span>
+<span class="ruby-identifier">country_code</span> = <span class="ruby-string">&#39;US&#39;</span>
+<span class="ruby-identifier">similar_artists</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_similar_artists</span>(<span class="ruby-identifier">artist_id</span>, <span class="ruby-identifier">country_code</span>)
+</pre>
+
+<h3 id="label-Fetch+Single+Artist">Fetch Single Artist<span><a href="#label-Fetch+Single+Artist">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">artist_id</span> = <span class="ruby-string">&#39;1234&#39;</span>
+<span class="ruby-identifier">country_code</span> = <span class="ruby-string">&#39;US&#39;</span>
+<span class="ruby-identifier">artist</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_single_artist</span>(<span class="ruby-identifier">artist_id</span>, <span class="ruby-identifier">country_code</span>)
+</pre>
+
+<h3 id="label-Fetch+Tracks+by+Artist">Fetch Tracks by Artist<span><a href="#label-Fetch+Tracks+by+Artist">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">artist_id</span> = <span class="ruby-string">&#39;1234&#39;</span>
+<span class="ruby-identifier">country_code</span> = <span class="ruby-string">&#39;US&#39;</span>
+<span class="ruby-identifier">tracks</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_tracks_by_artist</span>(<span class="ruby-identifier">artist_id</span>, <span class="ruby-identifier">country_code</span>)
+</pre>
+
+<h3 id="label-Fetch+Multiple+Tracks+by+IDs">Fetch Multiple Tracks by IDs<span><a href="#label-Fetch+Multiple+Tracks+by+IDs">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">track_ids</span> = [<span class="ruby-string">&#39;123&#39;</span>, <span class="ruby-string">&#39;456&#39;</span>, <span class="ruby-string">&#39;789&#39;</span>]
+<span class="ruby-identifier">country_code</span> = <span class="ruby-string">&#39;US&#39;</span>
+<span class="ruby-identifier">tracks</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_multiple_tracks</span>(<span class="ruby-identifier">track_ids</span>, <span class="ruby-identifier">country_code</span>)
+</pre>
+
+<h3 id="label-Fetch+Tracks+by+ISRC">Fetch Tracks by ISRC<span><a href="#label-Fetch+Tracks+by+ISRC">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">isrc</span> = <span class="ruby-string">&#39;US1234567890&#39;</span>
+<span class="ruby-identifier">country_code</span> = <span class="ruby-string">&#39;US&#39;</span>
+<span class="ruby-identifier">tracks</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_tracks_by_isrc</span>(<span class="ruby-identifier">isrc</span>, <span class="ruby-identifier">country_code</span>)
+</pre>
+
+<h3 id="label-Fetch+Single+Track">Fetch Single Track<span><a href="#label-Fetch+Single+Track">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">track_id</span> = <span class="ruby-string">&#39;1234&#39;</span>
+<span class="ruby-identifier">country_code</span> = <span class="ruby-string">&#39;US&#39;</span>
+<span class="ruby-identifier">track</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_single_track</span>(<span class="ruby-identifier">track_id</span>, <span class="ruby-identifier">country_code</span>)
+</pre>
+
+<h3 id="label-Fetch+Similar+Tracks">Fetch Similar Tracks<span><a href="#label-Fetch+Similar+Tracks">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">track_id</span> = <span class="ruby-string">&#39;1234&#39;</span>
+<span class="ruby-identifier">country_code</span> = <span class="ruby-string">&#39;US&#39;</span>
+<span class="ruby-identifier">similar_tracks</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_similar_tracks</span>(<span class="ruby-identifier">track_id</span>, <span class="ruby-identifier">country_code</span>)
+</pre>
+
+<h3 id="label-Fetch+Multiple+Videos+by+IDs">Fetch Multiple Videos by IDs<span><a href="#label-Fetch+Multiple+Videos+by+IDs">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">video_ids</span> = [<span class="ruby-string">&#39;123&#39;</span>, <span class="ruby-string">&#39;456&#39;</span>, <span class="ruby-string">&#39;789&#39;</span>]
+<span class="ruby-identifier">country_code</span> = <span class="ruby-string">&#39;US&#39;</span>
+<span class="ruby-identifier">videos</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_multiple_videos</span>(<span class="ruby-identifier">video_ids</span>, <span class="ruby-identifier">country_code</span>)
+</pre>
+
+<h3 id="label-Fetch+Single+Video">Fetch Single Video<span><a href="#label-Fetch+Single+Video">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">video_id</span> = <span class="ruby-string">&#39;1234&#39;</span>
+<span class="ruby-identifier">country_code</span> = <span class="ruby-string">&#39;US&#39;</span>
+<span class="ruby-identifier">video</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_single_video</span>(<span class="ruby-identifier">video_id</span>, <span class="ruby-identifier">country_code</span>)
+</pre>
+
+<h3 id="label-Search">Search<span><a href="#label-Search">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">query</span> = <span class="ruby-string">&#39;Shape of You&#39;</span>
+<span class="ruby-identifier">country_code</span> = <span class="ruby-string">&#39;US&#39;</span>
+<span class="ruby-identifier">search_results</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_search</span>(<span class="ruby-identifier">query</span>, <span class="ruby-identifier">country_code</span>)
+</pre>
+
+<h2 id="label-Development">Development<span><a href="#label-Development">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>After checking out the repo, run <code>bin/setup</code> to install dependencies. Then, run <code>rake spec</code> to run the tests. You can also run <code>bin/console</code> for an interactive prompt that will allow you to experiment.</p>
+
+<p>To install this gem onto your local machine, run <code>bundle exec rake install</code>. To release a new version, update the version number in <code>version.rb</code>, and then run <code>bundle exec rake release</code>, which will create a git tag for the version, push git commits and the created tag, and push the <code>.gem</code> file to <a href="https://rubygems.org">rubygems.org</a>.</p>
+
+<h2 id="label-Contributing">Contributing<span><a href="#label-Contributing">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/[USERNAME]/tidal">github.com/[USERNAME]/tidal</a>.</p>
+
+<h2 id="label-License">License<span><a href="#label-License">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>The gem is available as open source under the terms of the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.7.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

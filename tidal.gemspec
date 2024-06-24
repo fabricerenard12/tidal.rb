@@ -34,6 +34,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "oauth2", "~> 2.0"
   spec.add_dependency "uri", "~> 0.13.0"
+  spec.add_dependency "rdoc", "~> 6.7"
 
   spec.add_development_dependency "rspec", "~> 3.10"
 

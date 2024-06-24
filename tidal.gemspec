@@ -9,12 +9,10 @@ Gem::Specification.new do |spec|
   spec.email = ["fabrice.renard12@outlook.com"]
 
   spec.summary = "A Ruby wrapper to interact with the Tidal API"
-  spec.description = ""
+  spec.description = "This gem provides a Ruby wrapper around the Tidal API, allowing developers to easily interact with Tidal's services, including retrieving album and artist information, searching for tracks, and more."
   spec.homepage = "https://github.com/fabricerenard12/tidal.rb"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
-
-  spec.metadata["allowed_push_host"] = ""
 
   spec.metadata["homepage_uri"] = spec.homepage
 
@@ -36,6 +34,8 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "oauth2", "~> 2.0"
   spec.add_dependency "uri", "~> 0.13.0"
+
+  spec.add_development_dependency "rspec", "~> 3.10"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html

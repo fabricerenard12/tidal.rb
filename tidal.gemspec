@@ -35,6 +35,7 @@ Gem::Specification.new do |spec|
   # spec.add_dependency "example-gem", "~> 1.0"
 
   spec.add_dependency "oauth2", "~> 2.0"
+  spec.add_dependency "uri", "~> 0.13.0"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html

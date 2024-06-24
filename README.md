@@ -1,24 +1,177 @@
+
 # Tidal
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/tidal`. To experiment with that code, run `bin/console` for an interactive prompt.
+A Ruby wrapper to interact with the Tidal API. This gem provides a Ruby wrapper around the Tidal API, allowing developers to easily interact with Tidal's services, including retrieving album and artist information, searching for tracks, and more.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Add this line to your application's Gemfile:
 
-Install the gem and add to the application's Gemfile by executing:
+```ruby
+gem 'tidal'
+```
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+And then execute:
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+```sh
+$ bundle install
+```
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+Or install it yourself as:
+
+```sh
+$ gem install tidal
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+### Configuration
+
+First, you need to initialize the client with your Tidal API credentials.
+
+```ruby
+require 'tidal'
+
+client_id = 'your_client_id'
+client_secret = 'your_client_secret'
+client = Tidal::ClientV1.new(client_id, client_secret)
+```
+
+### Fetch Albums by Barcode ID
+
+```ruby
+barcode_id = '123456789'
+country_code = 'US'
+albums = client.get_albums_by_barcode_id(barcode_id, country_code)
+```
+
+### Fetch Multiple Albums by IDs
+
+```ruby
+album_ids = ['123', '456', '789']
+country_code = 'US'
+albums = client.get_multiple_albums(album_ids, country_code)
+```
+
+### Fetch Album Items
+
+```ruby
+album_id = '123'
+country_code = 'US'
+items = client.get_album_items(album_id, country_code)
+```
+
+### Fetch Similar Albums
+
+```ruby
+album_id = '123'
+country_code = 'US'
+similar_albums = client.get_similar_albums(album_id, country_code)
+```
+
+### Fetch Single Album
+
+```ruby
+album_id = '123'
+country_code = 'US'
+album = client.get_single_album(album_id, country_code)
+```
+
+### Fetch Albums by Artist
+
+```ruby
+artist_id = '1234'
+country_code = 'US'
+albums = client.get_albums_by_artist(artist_id, country_code)
+```
+
+### Fetch Multiple Artists by IDs
+
+```ruby
+artist_ids = ['123', '456', '789']
+country_code = 'US'
+artists = client.get_multiple_artists(artist_ids, country_code)
+```
+
+### Fetch Similar Artists
+
+```ruby
+artist_id = '1234'
+country_code = 'US'
+similar_artists = client.get_similar_artists(artist_id, country_code)
+```
+
+### Fetch Single Artist
+
+```ruby
+artist_id = '1234'
+country_code = 'US'
+artist = client.get_single_artist(artist_id, country_code)
+```
+
+### Fetch Tracks by Artist
+
+```ruby
+artist_id = '1234'
+country_code = 'US'
+tracks = client.get_tracks_by_artist(artist_id, country_code)
+```
+
+### Fetch Multiple Tracks by IDs
+
+```ruby
+track_ids = ['123', '456', '789']
+country_code = 'US'
+tracks = client.get_multiple_tracks(track_ids, country_code)
+```
+
+### Fetch Tracks by ISRC
+
+```ruby
+isrc = 'US1234567890'
+country_code = 'US'
+tracks = client.get_tracks_by_isrc(isrc, country_code)
+```
+
+### Fetch Single Track
+
+```ruby
+track_id = '1234'
+country_code = 'US'
+track = client.get_single_track(track_id, country_code)
+```
+
+### Fetch Similar Tracks
+
+```ruby
+track_id = '1234'
+country_code = 'US'
+similar_tracks = client.get_similar_tracks(track_id, country_code)
+```
+
+### Fetch Multiple Videos by IDs
+
+```ruby
+video_ids = ['123', '456', '789']
+country_code = 'US'
+videos = client.get_multiple_videos(video_ids, country_code)
+```
+
+### Fetch Single Video
+
+```ruby
+video_id = '1234'
+country_code = 'US'
+video = client.get_single_video(video_id, country_code)
+```
+
+### Search
+
+```ruby
+query = 'Shape of You'
+country_code = 'US'
+search_results = client.get_search(query, country_code)
+```
 
 ## Development
 

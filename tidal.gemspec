@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = ["Fabrice Renard"]
   spec.email = ["fabrice.renard12@outlook.com"]
 
-  spec.summary = ""
+  spec.summary = "A Ruby wrapper to interact with the Tidal API"
   spec.description = ""
   spec.homepage = "https://github.com/fabricerenard12/tidal.rb"
   spec.license = "MIT"

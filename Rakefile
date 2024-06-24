@@ -7,10 +7,11 @@ require 'rdoc/task'
 RSpec::Core::RakeTask.new(:spec)
 
 RDoc::Task.new do |rdoc|
-  rdoc.rdoc_dir = 'doc'
-  rdoc.title    = 'Tidal Client Documentation'
+  rdoc.rdoc_dir = 'docs'
+  rdoc.title    = 'Tidal API Client Documentation'
   rdoc.options  = ['--main', 'README.md']
-  rdoc.rdoc_files.include('lib/**/*.rb', 'README.md')
+  rdoc.rdoc_files.include('README.md', 'lib/**/*.rb')
 end
+
 
 task default: :spec

@@ -187,7 +187,7 @@ You can find the full documentation [here](https://fabricerenard12.github.io/tid
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/tidal.rb.
+Bug reports and pull requests are welcome on GitHub at https://github.com/fabricerenard12/tidal.rb.
 
 ## License
 
